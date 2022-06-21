@@ -1,0 +1,24 @@
+#+TITLE: Emacs Configuration
+#+AUTHOR: Alexander Haan
+
+* Basic configuration
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; turn on visible bell
+  (setq visible-bell t)
+  ;; do not create backup files
+  (setq make-backup-files nil)
+#+END_SRC
+
+* Packages
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package dracula-theme
+    :ensure t)
+#+END_SRC
+
+* Visual configs
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (load-theme 'dracula t)
+#+END_SRC
