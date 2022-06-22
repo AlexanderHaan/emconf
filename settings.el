@@ -11,7 +11,8 @@
 (use-package evil
   :ensure t
   :init
-  (setq evil-want-C-u-scroll t)		; Enable Scroll up with C-u
+  (setq evil-want-C-u-scroll t)	; Enable Scroll up with C-u
+  (setq evil-auto-indent nil)	           ; Disable auto indent
   :config
   (evil-mode))
 
@@ -20,18 +21,24 @@
   :ensure t
   :init
   (setq-default evil-escape-delay 0.2)
-  (setq-default evil-escape-key-sequence "jj")
-    (evil-escape-mode))
+  (setq-default evil-escape-key-sequence "jk")
+  (evil-escape-mode))
 
 ;; Install Evil for Org-mode
 (use-package evil-org
   :ensure t
   :after org
-  :hook (org-mode . (lambda () evil-org-mode))
-  :config
+  :config  
   (require 'evil-org-agenda)
   (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
+  (add-hook 'org-mode-hook  (lambda ()
+    (evil-org-mode)))
   (evil-org-agenda-set-keys))
+
+;; Install magit
+(use-package magit
+  :ensure t
+  )
 
 ;; Set dracula theme
 (load-theme 'dracula t)
