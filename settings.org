@@ -44,6 +44,20 @@
   (global-tree-sitter-mode)
 #+End_SRC
 
+** Which key
+
+This package shows after a time delay which
+key binding are available (e.g. it will show
+available commands after you press C-c). 
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; Install whick key
+  (use-package which-key
+    :ensure t
+    )
+  (which-key-mode)
+#+End_SRC
+
 * Visual configs
 
 #+BEGIN_SRC emacs-lisp :tangle yes

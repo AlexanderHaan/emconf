@@ -22,5 +22,11 @@
   )
 (global-tree-sitter-mode)
 
+;; Install whick key
+(use-package which-key
+  :ensure t
+  )
+(which-key-mode)
+
 ;; disable tool bar
 (tool-bar-mode -1)
