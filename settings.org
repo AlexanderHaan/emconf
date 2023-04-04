@@ -12,45 +12,7 @@
 
 * Packages
 
-#+BEGIN_SRC emacs-lisp :tangle yes
-  ;; Install Dracula theme
-  (use-package dracula-theme
-    :ensure t)
-#+END_SRC
-
-* Evil configs
-
-#+BEGIN_SRC emacs-lisp :tangle yes
-  ;; Install Evil
-  (use-package evil
-    :ensure t
-    :init
-    (setq evil-want-C-u-scroll t)		; Enable Scroll up with C-u
-    (setq evil-auto-indent nil)		; Disable auto indent
-    :config
-    (evil-mode))
-
-  ;; Remap Escape key
-  (use-package evil-escape
-    :ensure t
-    :init
-    (setq-default evil-escape-delay 0.2)
-    (setq-default evil-escape-key-sequence "jk")
-    (evil-escape-mode))
-
-  ;; Install Evil for Org-mode
-  (use-package evil-org
-    :ensure t
-    :after org
-    :config  
-    (require 'evil-org-agenda)
-    (evil-org-set-key-theme '(textobjects insert navigation additional shift todo heading))
-    (add-hook 'org-mode-hook  (lambda ()
-				(evil-org-mode)))
-    (evil-org-agenda-set-keys))
-#+END_SRC
-
-* Magit
+** Magit
 
 #+BEGIN_SRC emacs-lisp :tangle yes
   ;; Install magit
@@ -61,11 +23,30 @@
 
 #+End_SRC
 
+** Rust mode
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; Install rust mode
+  (use-package rust-mode
+    :ensure t
+    )
+#+End_SRC
+
+** Tree sitter
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; Install tree sitter
+  (use-package tree-sitter
+    :ensure t
+    )
+  (use-package tree-sitter-langs
+    :ensure t
+    )
+  (global-tree-sitter-mode)
+#+End_SRC
+
 * Visual configs
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-  ;; Set dracula theme
-  (load-theme 'dracula t)
   ;; disable tool bar
   (tool-bar-mode -1)
 #+END_SRC
