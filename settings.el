@@ -44,7 +44,7 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 ;; Use different heading sizes
 (let* ((variable-tuple
-       (cond  ((x-list-fonts "SauceCodePro Nerd Font") '(:font "SauceCodePro Nerd Font"))
+       (cond  ((x-list-fonts "Ubuntu") '(:font "Ubuntu"))
 	      ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
 	      (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
        (base-font-color     (face-foreground 'default nil 'default))
@@ -76,3 +76,5 @@
  '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
  '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+;; Use different font styles for different text
+(add-hook 'org-mode-hook 'variable-pitch-mode )
