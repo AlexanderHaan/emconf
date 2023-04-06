@@ -119,3 +119,9 @@ and looking.
   ;; Use different font styles for different text
   (add-hook 'org-mode-hook 'variable-pitch-mode )
 #+END_SRC
+
+* Java configs
+#+BEGIN_SRC emacs-lisp :tangle yes
+  ;; set indentation to 2 spaces
+  (add-hook 'java-mode-hook (setq c-basic-offset 2))
+#+END_SRC
