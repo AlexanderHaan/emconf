@@ -77,7 +77,8 @@
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
  '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 ;; Use different font styles for different text
-(add-hook 'org-mode-hook 'variable-pitch-mode )
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 ;; set indentation to 2 spaces
 (add-hook 'java-mode-hook (setq c-basic-offset 2))
