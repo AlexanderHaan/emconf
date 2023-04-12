@@ -71,6 +71,8 @@ Here are some configs for the org behavior
 and looking.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
+  ;; Collapse all at start up
+  (setq org-startup-folded t)
   ;; Hide *bold* and /italic/ symbols
   (setq org-hide-emphasis-markers t)
   ;; Replace hyphon for bullet in lists
