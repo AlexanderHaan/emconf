@@ -21,6 +21,7 @@
   :ensure t
   )
 (global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Install whick key
 (use-package which-key
@@ -31,6 +32,8 @@
 ;; disable tool bar
 (tool-bar-mode -1)
 
+;; Collapse all at start up
+(setq org-startup-folded t)
 ;; Hide *bold* and /italic/ symbols
 (setq org-hide-emphasis-markers t)
 ;; Replace hyphon for bullet in lists
